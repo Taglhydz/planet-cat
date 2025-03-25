@@ -211,6 +211,20 @@
   color: var(--text-color);
 }
 
+.image-categories, .modal-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.image-category, .modal-category {
+  background-color: var(--bg-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
 .no-results {
   grid-column: 1 / -1;
   text-align: center;

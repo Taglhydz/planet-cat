@@ -19,8 +19,9 @@ const GifCatPage = () => {
         const gifs = await fetchGifs();
         setCatGifs(gifs);
         
-        // Extraire les catégories uniques des GIFs
-        const uniqueCategories = ['tous', ...new Set(gifs.map(gif => gif.category))];
+        // Extraire les catégories uniques des GIFs (maintenant depuis un tableau)
+        const allCategories = gifs.flatMap(gif => gif.categories || []);
+        const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
         // Charger les likes de l'utilisateur
@@ -43,7 +44,7 @@ const GifCatPage = () => {
 
   const filteredGifs = activeCategory === 'tous' 
     ? catGifs 
-    : catGifs.filter(gif => gif.category === activeCategory);
+    : catGifs.filter(gif => (gif.categories || []).includes(activeCategory));
 
   const toggleLike = async (id) => {
     try {
@@ -105,9 +106,14 @@ const GifCatPage = () => {
                 <img src={gif.url} alt={gif.title} />
               </div>
               <div className="gif-footer">
-                <div className="gif-title">{gif.title}</div>
                 <div className="gif-info">
-                  <span className="gif-category">{gif.category}</span>
+                  <div className="gif-categories">
+                    {(gif.categories || []).map(category => (
+                      <span key={`${gif.id}-${category}`} className="gif-category">
+                        {category}
+                      </span>
+                    ))}
+                  </div>
                   <div className="like-container">
                     <button 
                       className={`like-button ${userLikes[gif.id] ? 'liked' : ''}`}

@@ -2,110 +2,187 @@
   "memes": [
     {
       "id": "1",
-      "url": "https://i.imgur.com/OKtBUdy.jpeg",
-      "title": "Chat Monday",
-      "category": "humour",
+      "url": "https://i.pinimg.com/736x/45/f4/52/45f452315f2e9f4ee7fc981a52a7943b.jpg",
+      "title": "",
+      "categories": [
+        "humour",
+        "quotidien"
+      ],
       "likes": 0
     },
     {
       "id": "2",
-      "url": "https://i.imgur.com/CoEF2TI.jpeg",
-      "title": "Regard suspicieux",
-      "category": "expression",
+      "url": "https://images7.memedroid.com/images/UPLOADED288/67bd5aeab1f78.jpeg",
+      "title": "",
+      "categories": [
+        "expression",
+        "humour"
+      ],
       "likes": 0
     },
     {
       "id": "3",
-      "url": "https://i.imgur.com/Zl2hBid.jpeg",
-      "title": "Chat programmeur",
-      "category": "technologie",
+      "url": "https://www.chadoux.com/wp-content/uploads/2022/05/image-de-chat-drole-300x223.png",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
       "likes": 0
     },
     {
       "id": "4",
-      "url": "https://i.imgur.com/T3d6IYQ.jpeg",
-      "title": "Chat perplexe",
-      "category": "expression",
+      "url": "https://i.pinimg.com/736x/d2/14/f7/d214f79a4bc5958a83113424f28d4d60.jpg",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
       "likes": 0
     },
     {
       "id": "5",
-      "url": "https://i.imgur.com/tIUXuPS.jpeg",
-      "title": "Chat fatigué",
-      "category": "humour",
+      "url": "https://images7.memedroid.com/images/UPLOADED769/57d98e4a67c81.jpeg",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
       "likes": 0
     },
     {
       "id": "6",
-      "url": "https://i.imgur.com/WsDSW1N.jpeg",
-      "title": "Chat scientifique",
-      "category": "technologie",
+      "url": "https://i.pinimg.com/736x/fd/a7/d2/fda7d287c34ff208fa7bb1880815590c.jpg",
+      "title": "",
+      "categories": [
+        "expression"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "7",
+      "url": "https://i.pinimg.com/736x/21/b5/b5/21b5b5579956765a435b5d6406f2e6cd.jpg",
+      "title": "",
+      "categories": [
+        "humour"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "8",
+      "url": "https://i.pinimg.com/736x/23/c6/66/23c666c8f50865321a05db82cfff8c1f.jpg",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "9",
+      "url": "https://www.chadoux.com/wp-content/uploads/2022/05/chat-marrant.png",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "10",
+      "url": "https://i.pinimg.com/736x/38/bf/74/38bf74037c00060f7e242259006ac346.jpg",
+      "title": "",
+      "categories": [
+        "technologie"
+      ],
       "likes": 0
     }
   ],
-  "likedMemes": [],
   "catImages": [
     {
       "id": "1",
       "url": "https://img.freepik.com/photos-gratuite/femme-tenant-son-adorable-minou-maison_23-2149167140.jpg?t=st=1742914586~exp=1742918186~hmac=42af87b179914742835f573a785620b94d5529fa82d0be99e0fa25e7e7173489&w=1380",
-      "title": "Chat curieux",
-      "category": "portrait",
+      "title": "",
+      "categories": [
+        "portrait",
+        "mignon"
+      ],
       "likes": 0
     },
     {
       "id": "2",
       "url": "https://img.freepik.com/photos-gratuite/chat-endormi-couche_181624-28780.jpg?t=st=1742914657~exp=1742918257~hmac=47b862743ac45830ff13b45e6f35aa64944e0d17fc990d322b8f9a4e51765a21&w=1380",
-      "title": "Chat dormant",
-      "category": "repos",
+      "title": "",
+      "categories": [
+        "repos"
+      ],
       "likes": 0
     },
     {
       "id": "3",
       "url": "https://img.freepik.com/photos-gratuite/gros-plan-mode-vie-animaux-compagnie_23-2149180534.jpg?ga=GA1.1.270024042.1728634114&semt=ais_hybrid",
-      "title": "Chat joueur",
-      "category": "jeu",
+      "title": "",
+      "categories": [
+        "jeu"
+      ],
       "likes": 0
     },
     {
       "id": "4",
       "url": "https://img.freepik.com/photos-gratuite/gros-plan-vertical-gros-chat-blanc-regardant-vers-droite-dans-noir_181624-41107.jpg?ga=GA1.1.270024042.1728634114&semt=ais_hybrid",
-      "title": "Chat majestueux",
-      "category": "portrait",
+      "title": "",
+      "categories": [
+        "portrait"
+      ],
       "likes": 0
     },
     {
       "id": "5",
       "url": "https://img.freepik.com/photos-gratuite/portrait-adorable-chat-domestique-mordant-doigt-son-proprietaire_23-2149167133.jpg?t=st=1742914772~exp=1742918372~hmac=bee35bb1d30d0f48c854693224f3a2c7f62e921397726d1ac4daef9180e88fdd&w=1380",
-      "title": "Chat espiègle",
-      "category": "humour",
+      "title": "",
+      "categories": [
+        "humour"
+      ],
       "likes": 0
     },
     {
       "id": "6",
       "url": "https://img.freepik.com/photos-gratuite/tabby-dormir-sol-ciment-bleu-regarder-ci-dessus_1150-19549.jpg?t=st=1742914804~exp=1742918404~hmac=edae96482dd6eb61062a73b212cdebd4f6ed542a3d5984afe7c54073468886eb&w=1380",
-      "title": "Chat relaxé",
-      "category": "repos",
+      "title": "",
+      "categories": [
+        "repos"
+      ],
       "likes": 0
     },
     {
       "id": "7",
       "url": "https://img.freepik.com/photos-gratuite/gros-plan-chat-domestique-surpris-sol-sous-lumieres_181624-27886.jpg?t=st=1742914632~exp=1742918232~hmac=b97a43aeb46271b333f7cea54f8732ff8a1dcbf044bd1e70db001e8a18ebe8ae&w=996",
-      "title": "Chat attentif",
-      "category": "portrait",
+      "title": "",
+      "categories": [
+        "portrait"
+      ],
       "likes": 0
     },
     {
       "id": "8",
       "url": "https://img.freepik.com/photos-gratuite/femme-jouant-chat-errant_53876-137685.jpg?t=st=1742914844~exp=1742918444~hmac=27f087a5ceb411a9d1b6a5534c43e71d4005d7d49bd5dc94101a9310ed3fd017&w=1380",
-      "title": "Chat câlin",
-      "category": "amour",
+      "title": "",
+      "categories": [
+        "amour"
+      ],
       "likes": 0
     },
     {
-      "id": "8",
+      "id": "9",
       "url": "https://img.freepik.com/photos-gratuite/gros-plan-chat-jouant-serie-orange-lumiere-dans-obscurite_181624-23218.jpg?t=st=1742914376~exp=1742917976~hmac=8288fd226902a4613f88ac7ffc47bc109dbd79219f5c11d6a47aef4c6a770950&w=1380",
-      "title": "Chat mignon",
-      "category": "mignon",
+      "title": "",
+      "categories": [
+        "mignon"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "10",
+      "url": "https://img.freepik.com/photos-gratuite/chat-mignon-qui-passe-du-temps-interieur_23-2150649172.jpg?t=st=1742915793~exp=1742919393~hmac=a2aeba65f1fc6a71a8de8cb15b81e7686f58abc7e8fe728a9c473f936dc089b6&w=1380",
+      "title": "",
+      "categories": [
+        "mignon"
+      ],
       "likes": 0
     }
   ],
@@ -113,46 +190,96 @@
     {
       "id": "1",
       "url": "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-      "title": "Chat tapant sur un clavier",
-      "category": "humour",
+      "title": "",
+      "categories": [
+        "humour"
+      ],
       "likes": 0
     },
     {
       "id": "2",
       "url": "https://media.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif",
-      "title": "Chat surpris",
-      "category": "reaction",
+      "title": "",
+      "categories": [
+        "reaction"
+      ],
       "likes": 0
     },
     {
       "id": "3",
-      "url": "https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif",
-      "title": "Chat dansant",
-      "category": "danse",
+      "url": "https://i.pinimg.com/originals/59/72/2d/59722dfedf5a00f312eb01049fbb71cb.gif",
+      "title": "",
+      "categories": [
+        "danse"
+      ],
       "likes": 0
     },
     {
       "id": "4",
       "url": "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif",
-      "title": "Chat joueur",
-      "category": "mignon",
+      "title": "",
+      "categories": [
+        "mignon"
+      ],
       "likes": 0
     },
     {
       "id": "5",
       "url": "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
-      "title": "Chat qui joue",
-      "category": "jeu",
+      "title": "",
+      "categories": [
+        "chercheur"
+      ],
       "likes": 0
     },
     {
       "id": "6",
       "url": "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
-      "title": "Chat qui tombe",
-      "category": "humour",
+      "title": "",
+      "categories": [
+        "reaction"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "7",
+      "url": "https://media.tenor.com/-qBsG1HwR4oAAAAM/cat-dance-dancing-cat.gif",
+      "title": "",
+      "categories": [
+        "danse"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "8",
+      "url": "https://c0.lestechnophiles.com/www.madmoizelle.com/wp-content/uploads/2013/08/gifchat11.gif?webp=1&key=0625fe25",
+      "title": "",
+      "categories": [
+        "peur"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "9",
+      "url": "https://c0.lestechnophiles.com/www.madmoizelle.com/wp-content/uploads/2013/08/gifchat1.gif?webp=1&key=c7a08801",
+      "title": "",
+      "categories": [
+        "style"
+      ],
+      "likes": 0
+    },
+    {
+      "id": "10",
+      "url": "https://c0.lestechnophiles.com/www.madmoizelle.com/wp-content/uploads/2013/08/gifchat21.gif?webp=1&key=78bf59fc",
+      "title": "",
+      "categories": [
+        "style",
+        "voiture"
+      ],
       "likes": 0
     }
   ],
   "likedImages": [],
+  "likedMemes": [],
   "likedGifs": []
 }

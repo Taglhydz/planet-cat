@@ -19,8 +19,9 @@ const MemeCatPage = () => {
         const memes = await fetchMemes();
         setCatMemes(memes);
         
-        // Extraire les catégories uniques des mèmes
-        const uniqueCategories = ['tous', ...new Set(memes.map(meme => meme.category))];
+        // Extraire les catégories uniques des mèmes (maintenant depuis un tableau)
+        const allCategories = memes.flatMap(meme => meme.categories || []);
+        const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
         // Charger les likes de l'utilisateur
@@ -43,7 +44,7 @@ const MemeCatPage = () => {
 
   const filteredMemes = activeCategory === 'tous' 
     ? catMemes 
-    : catMemes.filter(meme => meme.category === activeCategory);
+    : catMemes.filter(meme => (meme.categories || []).includes(activeCategory));
 
   const toggleLike = async (id) => {
     try {
@@ -103,9 +104,14 @@ const MemeCatPage = () => {
             <div key={meme.id} className="meme-card">
               <img src={meme.url} alt={meme.title} />
               <div className="meme-details">
-                <h3>{meme.title}</h3>
                 <div className="meme-actions">
-                  <span className="meme-category">{meme.category}</span>
+                  <div className="meme-categories">
+                    {(meme.categories || []).map(category => (
+                      <span key={`${meme.id}-${category}`} className="meme-category">
+                        {category}
+                      </span>
+                    ))}
+                  </div>
                   <div className="like-container">
                     <button 
                       className={`like-button ${userLikes[meme.id] ? 'liked' : ''}`}

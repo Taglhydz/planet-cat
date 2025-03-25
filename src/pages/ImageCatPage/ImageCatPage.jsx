@@ -18,10 +18,25 @@ const ImageCatPage = () => {
         
         // Charger les images
         const images = await fetchImages();
-        setCatImages(images);
         
-        // Extraire les catégories uniques des images
-        const uniqueCategories = ['tous', ...new Set(images.map(img => img.category))];
+        // Ajouter une protection contre les IDs dupliqués
+        const uniqueImages = [];
+        const seenIds = new Set();
+        
+        images.forEach(image => {
+          if (!seenIds.has(image.id)) {
+            seenIds.add(image.id);
+            uniqueImages.push(image);
+          } else {
+            console.warn(`Image avec ID dupliqué détectée: ${image.id}`);
+          }
+        });
+        
+        setCatImages(uniqueImages);
+        
+        // Extraire les catégories uniques des images (maintenant depuis un tableau)
+        const allCategories = uniqueImages.flatMap(img => img.categories || []);
+        const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
         // Charger les likes de l'utilisateur
@@ -44,7 +59,7 @@ const ImageCatPage = () => {
 
   const filteredImages = activeCategory === 'tous' 
     ? catImages 
-    : catImages.filter(image => image.category === activeCategory);
+    : catImages.filter(image => (image.categories || []).includes(activeCategory));
 
   const openImage = (image) => {
     setSelectedImage(image);
@@ -76,7 +91,19 @@ const ImageCatPage = () => {
       
       // Reload images to get updated like counts
       const updatedImages = await fetchImages();
-      setCatImages(updatedImages);
+      
+      // Appliquer la même protection lors des mises à jour
+      const uniqueUpdatedImages = [];
+      const seenIds = new Set();
+      
+      updatedImages.forEach(image => {
+        if (!seenIds.has(image.id)) {
+          seenIds.add(image.id);
+          uniqueUpdatedImages.push(image);
+        }
+      });
+      
+      setCatImages(uniqueUpdatedImages);
       
     } catch (error) {
       console.error("Erreur lors de la mise à jour du like:", error);
@@ -117,9 +144,14 @@ const ImageCatPage = () => {
             <div key={image.id} className="image-card" onClick={() => openImage(image)}>
               <img src={image.url} alt={image.title} />
               <div className="image-footer">
-                <div className="image-title">{image.title}</div>
                 <div className="image-info">
-                  <span className="image-category">{image.category}</span>
+                  <div className="image-categories">
+                    {(image.categories || []).map(category => (
+                      <span key={`${image.id}-${category}`} className="image-category">
+                        {category}
+                      </span>
+                    ))}
+                  </div>
                   <div className="like-container">
                     <button 
                       className={`like-button ${userLikes[image.id] ? 'liked' : ''}`}
@@ -148,9 +180,14 @@ const ImageCatPage = () => {
             <span className="close-button" onClick={closeImage}>&times;</span>
             <img src={selectedImage.url} alt={selectedImage.title} />
             <div className="modal-footer">
-              <h3>{selectedImage.title}</h3>
               <div className="modal-info">
-                <span className="modal-category">{selectedImage.category}</span>
+                <div className="modal-categories">
+                  {(selectedImage.categories || []).map(category => (
+                    <span key={`modal-${selectedImage.id}-${category}`} className="modal-category">
+                      {category}
+                    </span>
+                  ))}
+                </div>
                 <div className="like-container">
                   <button 
                     className={`like-button ${userLikes[selectedImage.id] ? 'liked' : ''}`}
