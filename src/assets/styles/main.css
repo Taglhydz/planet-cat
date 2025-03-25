@@ -1,0 +1,104 @@
+:root {
+  --primary-color: #b5eadd; /* Menthe pastel comme couleur principale */
+  --secondary-color: #ffd166; /* Jaune pastel */
+  --accent-color: #a0c4ff; /* Bleu clair pastel */
+  --bg-color: #f0f7f4; /* Fond légèrement verdâtre */
+  --text-color: #5e5e5e; /* Gris foncé pour le texte */
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --padding: 1rem;
+  --header-height: 120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #8ad4c5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding);
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background-color: #8ad4c5;
+  transform: translateY(-2px);
+}
+
+.card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--secondary-color);
+}
+
+.section-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: "🐾";
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+}

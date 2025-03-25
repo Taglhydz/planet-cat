@@ -1,0 +1,138 @@
+.header {
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+  margin-right: 10px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  padding: 3px;
+  background-color: var(--text-color);
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0.5rem;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+/* Icône pour le menu mobile */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: var(--secondary-color);
+}
+
+/* Style pour le menu mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    opacity: 0;
+  }
+
+  .nav-menu.active {
+    height: auto;
+    padding: 1rem 0;
+    opacity: 1;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: var(--bg-color);
+    border-left: 3px solid var(--primary-color);
+  }
+}

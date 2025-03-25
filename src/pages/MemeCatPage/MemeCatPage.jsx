@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import './GifCatPage.css';
-import { fetchGifs, fetchUserGifLikes, addGifLike, removeGifLike } from '../../services/api';
+import './MemeCatPage.css';
+import { fetchMemes, fetchUserLikes, addLike, removeLike } from '../../services/api';
 
-const GifCatPage = () => {
-  const [catGifs, setCatGifs] = useState([]);
+const MemeCatPage = () => {
+  const [catMemes, setCatMemes] = useState([]);
   const [userLikes, setUserLikes] = useState({});
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState(['tous']);
   const [activeCategory, setActiveCategory] = useState('tous');
 
-  // Charger les GIFs et les likes au chargement
+  // Charger les mèmes et les likes au chargement
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
         
-        // Charger les GIFs
-        const gifs = await fetchGifs();
-        setCatGifs(gifs);
+        // Charger les mèmes
+        const memes = await fetchMemes();
+        setCatMemes(memes);
         
-        // Extraire les catégories uniques des GIFs
-        const uniqueCategories = ['tous', ...new Set(gifs.map(gif => gif.category))];
+        // Extraire les catégories uniques des mèmes
+        const uniqueCategories = ['tous', ...new Set(memes.map(meme => meme.category))];
         setCategories(uniqueCategories);
         
         // Charger les likes de l'utilisateur
-        const likes = await fetchUserGifLikes();
+        const likes = await fetchUserLikes();
         const likesMap = {};
         likes.forEach(like => {
-          likesMap[like.gifId] = true;
+          likesMap[like.memeId] = true;
         });
         setUserLikes(likesMap);
         
@@ -41,9 +41,9 @@ const GifCatPage = () => {
     loadData();
   }, []);
 
-  const filteredGifs = activeCategory === 'tous' 
-    ? catGifs 
-    : catGifs.filter(gif => gif.category === activeCategory);
+  const filteredMemes = activeCategory === 'tous' 
+    ? catMemes 
+    : catMemes.filter(meme => meme.category === activeCategory);
 
   const toggleLike = async (id) => {
     try {
@@ -55,14 +55,14 @@ const GifCatPage = () => {
       
       // API call
       if (userLikes[id]) {
-        await removeGifLike(id);
+        await removeLike(id);
       } else {
-        await addGifLike(id);
+        await addLike(id);
       }
       
-      // Reload gifs to get updated like counts
-      const updatedGifs = await fetchGifs();
-      setCatGifs(updatedGifs);
+      // Reload memes to get updated like counts
+      const updatedMemes = await fetchMemes();
+      setCatMemes(updatedMemes);
       
     } catch (error) {
       console.error("Erreur lors de la mise à jour du like:", error);
@@ -75,15 +75,15 @@ const GifCatPage = () => {
   };
 
   if (loading) {
-    return <div className="loading">Chargement des GIFs de chats...</div>;
+    return <div className="loading">Chargement des mèmes de chats...</div>;
   }
 
   return (
-    <div className="gif-cat-page">
+    <div className="meme-cat-page">
       <div className="container">
-        <h1 className="page-title">GIFs de Chats</h1>
+        <h1 className="page-title">Memes de Chats</h1>
         <p className="page-description">
-          Une collection de GIFs amusants et mignons de nos amis félins.
+          Les meilleurs memes de chats sur internet. Parcourez par catégorie et marquez vos favoris !
         </p>
         
         <div className="category-filters">
@@ -98,33 +98,31 @@ const GifCatPage = () => {
           ))}
         </div>
         
-        <div className="gif-grid">
-          {filteredGifs.map((gif) => (
-            <div key={gif.id} className="gif-card">
-              <div className="gif-container">
-                <img src={gif.url} alt={gif.title} />
-              </div>
-              <div className="gif-footer">
-                <div className="gif-title">{gif.title}</div>
-                <div className="gif-info">
-                  <span className="gif-category">{gif.category}</span>
+        <div className="meme-grid">
+          {filteredMemes.map((meme) => (
+            <div key={meme.id} className="meme-card">
+              <img src={meme.url} alt={meme.title} />
+              <div className="meme-details">
+                <h3>{meme.title}</h3>
+                <div className="meme-actions">
+                  <span className="meme-category">{meme.category}</span>
                   <div className="like-container">
                     <button 
-                      className={`like-button ${userLikes[gif.id] ? 'liked' : ''}`}
-                      onClick={() => toggleLike(gif.id)}
+                      className={`like-button ${userLikes[meme.id] ? 'liked' : ''}`}
+                      onClick={() => toggleLike(meme.id)}
                     >
-                      {userLikes[gif.id] ? '❤️' : '🤍'} 
+                      {userLikes[meme.id] ? '❤️' : '🤍'} 
                     </button>
-                    <span className="like-count">{gif.likes}</span>
+                    <span className="like-count">{meme.likes}</span>
                   </div>
                 </div>
               </div>
             </div>
           ))}
           
-          {filteredGifs.length === 0 && (
+          {filteredMemes.length === 0 && (
             <div className="no-results">
-              <p>Aucun GIF ne correspond à cette catégorie 😿</p>
+              <p>Aucun meme ne correspond à cette catégorie 😿</p>
             </div>
           )}
         </div>
@@ -133,4 +131,4 @@ const GifCatPage = () => {
   );
 };
 
-export default GifCatPage;
+export default MemeCatPage;

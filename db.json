@@ -1,0 +1,158 @@
+{
+  "memes": [
+    {
+      "id": "1",
+      "url": "https://i.imgur.com/OKtBUdy.jpeg",
+      "title": "Chat Monday",
+      "category": "humour",
+      "likes": 0
+    },
+    {
+      "id": "2",
+      "url": "https://i.imgur.com/CoEF2TI.jpeg",
+      "title": "Regard suspicieux",
+      "category": "expression",
+      "likes": 0
+    },
+    {
+      "id": "3",
+      "url": "https://i.imgur.com/Zl2hBid.jpeg",
+      "title": "Chat programmeur",
+      "category": "technologie",
+      "likes": 0
+    },
+    {
+      "id": "4",
+      "url": "https://i.imgur.com/T3d6IYQ.jpeg",
+      "title": "Chat perplexe",
+      "category": "expression",
+      "likes": 0
+    },
+    {
+      "id": "5",
+      "url": "https://i.imgur.com/tIUXuPS.jpeg",
+      "title": "Chat fatigué",
+      "category": "humour",
+      "likes": 0
+    },
+    {
+      "id": "6",
+      "url": "https://i.imgur.com/WsDSW1N.jpeg",
+      "title": "Chat scientifique",
+      "category": "technologie",
+      "likes": 0
+    }
+  ],
+  "likedMemes": [],
+  "catImages": [
+    {
+      "id": "1",
+      "url": "https://img.freepik.com/photos-gratuite/femme-tenant-son-adorable-minou-maison_23-2149167140.jpg?t=st=1742914586~exp=1742918186~hmac=42af87b179914742835f573a785620b94d5529fa82d0be99e0fa25e7e7173489&w=1380",
+      "title": "Chat curieux",
+      "category": "portrait",
+      "likes": 0
+    },
+    {
+      "id": "2",
+      "url": "https://img.freepik.com/photos-gratuite/chat-endormi-couche_181624-28780.jpg?t=st=1742914657~exp=1742918257~hmac=47b862743ac45830ff13b45e6f35aa64944e0d17fc990d322b8f9a4e51765a21&w=1380",
+      "title": "Chat dormant",
+      "category": "repos",
+      "likes": 0
+    },
+    {
+      "id": "3",
+      "url": "https://img.freepik.com/photos-gratuite/gros-plan-mode-vie-animaux-compagnie_23-2149180534.jpg?ga=GA1.1.270024042.1728634114&semt=ais_hybrid",
+      "title": "Chat joueur",
+      "category": "jeu",
+      "likes": 0
+    },
+    {
+      "id": "4",
+      "url": "https://img.freepik.com/photos-gratuite/gros-plan-vertical-gros-chat-blanc-regardant-vers-droite-dans-noir_181624-41107.jpg?ga=GA1.1.270024042.1728634114&semt=ais_hybrid",
+      "title": "Chat majestueux",
+      "category": "portrait",
+      "likes": 0
+    },
+    {
+      "id": "5",
+      "url": "https://img.freepik.com/photos-gratuite/portrait-adorable-chat-domestique-mordant-doigt-son-proprietaire_23-2149167133.jpg?t=st=1742914772~exp=1742918372~hmac=bee35bb1d30d0f48c854693224f3a2c7f62e921397726d1ac4daef9180e88fdd&w=1380",
+      "title": "Chat espiègle",
+      "category": "humour",
+      "likes": 0
+    },
+    {
+      "id": "6",
+      "url": "https://img.freepik.com/photos-gratuite/tabby-dormir-sol-ciment-bleu-regarder-ci-dessus_1150-19549.jpg?t=st=1742914804~exp=1742918404~hmac=edae96482dd6eb61062a73b212cdebd4f6ed542a3d5984afe7c54073468886eb&w=1380",
+      "title": "Chat relaxé",
+      "category": "repos",
+      "likes": 0
+    },
+    {
+      "id": "7",
+      "url": "https://img.freepik.com/photos-gratuite/gros-plan-chat-domestique-surpris-sol-sous-lumieres_181624-27886.jpg?t=st=1742914632~exp=1742918232~hmac=b97a43aeb46271b333f7cea54f8732ff8a1dcbf044bd1e70db001e8a18ebe8ae&w=996",
+      "title": "Chat attentif",
+      "category": "portrait",
+      "likes": 0
+    },
+    {
+      "id": "8",
+      "url": "https://img.freepik.com/photos-gratuite/femme-jouant-chat-errant_53876-137685.jpg?t=st=1742914844~exp=1742918444~hmac=27f087a5ceb411a9d1b6a5534c43e71d4005d7d49bd5dc94101a9310ed3fd017&w=1380",
+      "title": "Chat câlin",
+      "category": "amour",
+      "likes": 0
+    },
+    {
+      "id": "8",
+      "url": "https://img.freepik.com/photos-gratuite/gros-plan-chat-jouant-serie-orange-lumiere-dans-obscurite_181624-23218.jpg?t=st=1742914376~exp=1742917976~hmac=8288fd226902a4613f88ac7ffc47bc109dbd79219f5c11d6a47aef4c6a770950&w=1380",
+      "title": "Chat mignon",
+      "category": "mignon",
+      "likes": 0
+    }
+  ],
+  "catGifs": [
+    {
+      "id": "1",
+      "url": "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+      "title": "Chat tapant sur un clavier",
+      "category": "humour",
+      "likes": 0
+    },
+    {
+      "id": "2",
+      "url": "https://media.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif",
+      "title": "Chat surpris",
+      "category": "reaction",
+      "likes": 0
+    },
+    {
+      "id": "3",
+      "url": "https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif",
+      "title": "Chat dansant",
+      "category": "danse",
+      "likes": 0
+    },
+    {
+      "id": "4",
+      "url": "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif",
+      "title": "Chat joueur",
+      "category": "mignon",
+      "likes": 0
+    },
+    {
+      "id": "5",
+      "url": "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
+      "title": "Chat qui joue",
+      "category": "jeu",
+      "likes": 0
+    },
+    {
+      "id": "6",
+      "url": "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
+      "title": "Chat qui tombe",
+      "category": "humour",
+      "likes": 0
+    }
+  ],
+  "likedImages": [],
+  "likedGifs": []
+}

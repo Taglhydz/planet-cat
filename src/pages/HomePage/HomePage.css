@@ -1,0 +1,181 @@
+/* Section Héro */
+.intro-section {
+  padding: 4rem 0;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.intro-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.intro-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.intro-content h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.intro-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.intro-image {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 3px solid var(--accent-color);
+}
+
+/* Section Catégories */
+.categories-section {
+  padding: 4rem 0;
+  background-color: var(--bg-color);
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--secondary-color);
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.category-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.category-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.category-link:hover {
+  transform: translateX(5px);
+  color: #8ad4c5; /* Version plus foncée du menthe */
+}
+
+/* Section Faits amusants */
+.fun-facts-section {
+  padding: 4rem 0;
+  background-color: white;
+  border-top: 3px solid var(--secondary-color);
+}
+
+.fun-facts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.fun-fact-card {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.fun-fact-card:hover {
+  transform: translateY(-5px);
+}
+
+.fun-fact-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section .container {
+    flex-direction: column;
+  }
+  
+  .intro-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .intro-buttons {
+    justify-content: center;
+  }
+  
+  .fun-facts-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-content {
+    padding: 2rem 1rem;
+  }
+}
