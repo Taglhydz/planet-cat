@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ImageCatPage.css';
 import { fetchImages, fetchUserImageLikes, addImageLike, removeImageLike } from '../../services/api';
 
@@ -10,16 +11,13 @@ const ImageCatPage = () => {
   const [categories, setCategories] = useState(['tous']);
   const [activeCategory, setActiveCategory] = useState('tous');
 
-  // Charger les images et les likes au chargement
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
         
-        // Charger les images
         const images = await fetchImages();
         
-        // Ajouter une protection contre les IDs dupliqués
         const uniqueImages = [];
         const seenIds = new Set();
         
@@ -34,12 +32,10 @@ const ImageCatPage = () => {
         
         setCatImages(uniqueImages);
         
-        // Extraire les catégories uniques des images (maintenant depuis un tableau)
         const allCategories = uniqueImages.flatMap(img => img.categories || []);
         const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
-        // Charger les likes de l'utilisateur
         const likes = await fetchUserImageLikes();
         const likesMap = {};
         likes.forEach(like => {
@@ -70,29 +66,24 @@ const ImageCatPage = () => {
   };
 
   const toggleLike = async (id, event) => {
-    // Empêcher l'ouverture de l'image lorsqu'on clique sur le bouton like
     if (event && event.stopPropagation) {
       event.stopPropagation();
     }
     
     try {
-      // Optimistic UI update
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
       
-      // API call
       if (userLikes[id]) {
         await removeImageLike(id);
       } else {
         await addImageLike(id);
       }
       
-      // Reload images to get updated like counts
       const updatedImages = await fetchImages();
       
-      // Appliquer la même protection lors des mises à jour
       const uniqueUpdatedImages = [];
       const seenIds = new Set();
       
@@ -107,12 +98,16 @@ const ImageCatPage = () => {
       
     } catch (error) {
       console.error("Erreur lors de la mise à jour du like:", error);
-      // Rollback optimistic update if failed
+      
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
     }
+  };
+
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
   };
 
   if (loading) {
@@ -126,6 +121,12 @@ const ImageCatPage = () => {
         <p className="page-description">
           Découvrez notre collection d'adorables photos de chats. Cliquez sur une image pour l'agrandir.
         </p>
+        
+        <div className="back-button-container">
+          <Link to="/" className="back-button" onClick={handleNavClick}>
+            ← Retour à l'accueil
+          </Link>
+        </div>
         
         <div className="category-filters">
           {categories.map(category => (

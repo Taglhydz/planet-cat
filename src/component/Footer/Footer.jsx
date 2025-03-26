@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>
-            © {new Date().getFullYear()} Planet Cat. Tous droits réservés 
+            Copyright © {new Date().getFullYear()} Planet Cat. Tous droits réservés 
             <span className="paw-icon">🐾</span>
           </p>
         </div>

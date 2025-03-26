@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './GifCatPage.css';
 import { fetchGifs, fetchUserGifLikes, addGifLike, removeGifLike } from '../../services/api';
 
@@ -9,22 +10,18 @@ const GifCatPage = () => {
   const [categories, setCategories] = useState(['tous']);
   const [activeCategory, setActiveCategory] = useState('tous');
 
-  // Charger les GIFs et les likes au chargement
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
         
-        // Charger les GIFs
         const gifs = await fetchGifs();
         setCatGifs(gifs);
         
-        // Extraire les catégories uniques des GIFs (maintenant depuis un tableau)
         const allCategories = gifs.flatMap(gif => gif.categories || []);
         const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
-        // Charger les likes de l'utilisateur
         const likes = await fetchUserGifLikes();
         const likesMap = {};
         likes.forEach(like => {
@@ -48,31 +45,32 @@ const GifCatPage = () => {
 
   const toggleLike = async (id) => {
     try {
-      // Optimistic UI update
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
       
-      // API call
       if (userLikes[id]) {
         await removeGifLike(id);
       } else {
         await addGifLike(id);
       }
       
-      // Reload gifs to get updated like counts
       const updatedGifs = await fetchGifs();
       setCatGifs(updatedGifs);
       
     } catch (error) {
       console.error("Erreur lors de la mise à jour du like:", error);
-      // Rollback optimistic update if failed
+      
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
     }
+  };
+
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
   };
 
   if (loading) {
@@ -86,6 +84,12 @@ const GifCatPage = () => {
         <p className="page-description">
           Une collection de GIFs amusants et mignons de nos amis félins.
         </p>
+        
+        <div className="back-button-container">
+          <Link to="/" className="back-button" onClick={handleNavClick}>
+            ← Retour à l'accueil
+          </Link>
+        </div>
         
         <div className="category-filters">
           {categories.map(category => (

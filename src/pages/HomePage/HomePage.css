@@ -1,4 +1,4 @@
-/* Section Héro */
+/* Section intro */
 .intro-section {
   padding: 4rem 0;
   background-color: white;
@@ -111,12 +111,12 @@
   transition: all 0.3s ease;
 }
 
-.category-link:hover {
-  transform: translateX(5px);
-  color: #8ad4c5; /* Version plus foncée du menthe */
+.category-card .normal {
+  color: var(--text-color);
+  font-weight: 400;
 }
 
-/* Section Faits amusants */
+/* Section fun fact */
 .fun-facts-section {
   padding: 4rem 0;
   background-color: white;

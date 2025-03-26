@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './MemeCatPage.css';
 import { fetchMemes, fetchUserLikes, addLike, removeLike } from '../../services/api';
 
@@ -9,22 +10,18 @@ const MemeCatPage = () => {
   const [categories, setCategories] = useState(['tous']);
   const [activeCategory, setActiveCategory] = useState('tous');
 
-  // Charger les mèmes et les likes au chargement
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
         
-        // Charger les mèmes
         const memes = await fetchMemes();
         setCatMemes(memes);
-        
-        // Extraire les catégories uniques des mèmes (maintenant depuis un tableau)
+
         const allCategories = memes.flatMap(meme => meme.categories || []);
         const uniqueCategories = ['tous', ...new Set(allCategories)];
         setCategories(uniqueCategories);
         
-        // Charger les likes de l'utilisateur
         const likes = await fetchUserLikes();
         const likesMap = {};
         likes.forEach(like => {
@@ -48,31 +45,32 @@ const MemeCatPage = () => {
 
   const toggleLike = async (id) => {
     try {
-      // Optimistic UI update
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
       
-      // API call
       if (userLikes[id]) {
         await removeLike(id);
       } else {
         await addLike(id);
       }
       
-      // Reload memes to get updated like counts
       const updatedMemes = await fetchMemes();
       setCatMemes(updatedMemes);
       
     } catch (error) {
       console.error("Erreur lors de la mise à jour du like:", error);
-      // Rollback optimistic update if failed
+      
       setUserLikes(prev => ({
         ...prev,
         [id]: !prev[id]
       }));
     }
+  };
+
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
   };
 
   if (loading) {
@@ -86,6 +84,12 @@ const MemeCatPage = () => {
         <p className="page-description">
           Les meilleurs memes de chats sur internet. Parcourez par catégorie et marquez vos favoris !
         </p>
+        
+        <div className="back-button-container">
+          <Link to="/" className="back-button" onClick={handleNavClick}>
+            ← Retour à l'accueil
+          </Link>
+        </div>
         
         <div className="category-filters">
           {categories.map(category => (
